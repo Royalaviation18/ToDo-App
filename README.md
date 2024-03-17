@@ -53,7 +53,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd ToDo-App
+  cd ToDo-App-master
 ```
 
 - Open the Project in Visual Studio: Once you have the code on your local machine, open the project in Visual Studio. You can do this by navigating to the directory where the repository was cloned or extracted, and opening the solution file (.sln) in Visual Studio.
