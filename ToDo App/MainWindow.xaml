@@ -8,19 +8,28 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
-            <TextBox x:Name="txtTitle" Width="200" Margin="0,0,5,0" />
             <Label x:Name="txtTitlePlaceholder" Content="Title" Background="Transparent" Opacity="0.5" IsHitTestVisible="False"/>
-            <TextBox x:Name="txtDescription" Width="200" Margin="0,0,5,0" />
+            <TextBox x:Name="txtTitle" Width="200" Margin="0,0,5,0" />
             <Label x:Name="txtDescriptionPlaceholder" Content="Description" Background="Transparent" Opacity="0.5" IsHitTestVisible="False"/>
+            <TextBox x:Name="txtDescription" Width="200" Margin="0,0,5,0" />
             <Button Content="Add" Click="AddTodo_Click"/>
             <Button Content="Delete" Click="DeleteTodo_Click"/>
         </StackPanel>
         <ListView Grid.Row="1" x:Name="todoListView" ItemsSource="{Binding TodoList}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <CheckBox IsChecked="{Binding IsCompleted}" Margin="5"/>
-                        <TextBlock Text="{Binding Title}" Margin="5"/>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <CheckBox IsChecked="{Binding IsCompleted}" Margin="5"/>
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="{Binding Title}" Margin="5"/>
+                                <TextBlock Text="{Binding Description}" Margin="5" Foreground="Gray"/>
+                            </StackPanel>
+                        </Grid>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
