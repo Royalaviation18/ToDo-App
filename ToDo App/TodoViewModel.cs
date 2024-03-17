@@ -11,6 +11,7 @@ namespace TodoApp.ViewModels
 
         public ObservableCollection<TodoItem> TodoList { get; set; }
 
+        // constructor for the class and initializing it.
         public TodoViewModel()
         {
             TodoList = LoadTodoList();
